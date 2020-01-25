@@ -29,12 +29,11 @@ namespace ContorsoCraftsWbsite.Services
         // return a list of enumerable products
         public IEnumerable<Product> GetProducts()
         {
-            using StreamReader jsonFileReader = File.OpenText(JsonFileName);
-            return JsonSerializer.Deserialize<Product[]>(jsonFileReader.ReadToEnd(),
-new JsonSerializerOptions
-{
-PropertyNameCaseInsensitive = true
-});
+            using (var jsonFileReader = File.OpenText(JsonFileName))
+            return JsonSerializer.Deserialize<Product[]>(jsonFileReader.ReadToEnd(),new JsonSerializerOptions
+            {
+            PropertyNameCaseInsensitive = true
+            });
 
         }
 

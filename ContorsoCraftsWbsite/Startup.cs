@@ -29,6 +29,7 @@ namespace ContorsoCraftsWbsite
         {
             services.AddRazorPages();
             services.AddControllers();
+            services.AddTransient<JsonFileProductService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
